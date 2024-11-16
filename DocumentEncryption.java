@@ -22,7 +22,7 @@ public class DocumentEncryption {
         renameToOldFilename(inputFile, decryptedFile);
     }
 
-    private static void decryptToNewFile(File input, File output) {
+    public static void decryptToNewFile(File input, File output) {
         try (FileInputStream inputStream = new FileInputStream(input); FileOutputStream outputStream = new FileOutputStream(output)) {
             SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), ALGORITHM);
             Cipher cipher = Cipher.getInstance(TRANSFORMATION);
@@ -38,7 +38,7 @@ public class DocumentEncryption {
         }
     }
 
-    private static void encryptToNewFile(File inputFile, File outputFile) {
+    public static void encryptToNewFile(File inputFile, File outputFile) {
         try (FileInputStream inputStream = new FileInputStream(inputFile); FileOutputStream outputStream = new FileOutputStream(outputFile)) {
             SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), ALGORITHM);
             Cipher cipher = Cipher.getInstance(TRANSFORMATION);
