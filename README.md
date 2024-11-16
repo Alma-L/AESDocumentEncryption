@@ -29,7 +29,7 @@ This project provides a Java-based application for encrypting and decrypting doc
 - **`BookForEncryption_decrypted.pdf`**: Decrypted version of the sample PDF.
  
 ## Results Sample
- ![<alt text>][def image-1.png] <br>
+ ![<alt text>][image-1.png]<br>
  This a picture of the pdf we will try to encrpyt **BookForEncryption.pdf**<br><br>
  ![alt text](image.png)<br>
  This is a result from **BookForEncryption_encrpyted.pdf**, this is generated when we run file DocumentEncrptionTest.java
