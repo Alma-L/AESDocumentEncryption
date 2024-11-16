@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "PdfContentEncryption",
+            "request": "launch",
+            "mainClass": "PdfContentEncryption",
+            "projectName": "AESDocumentEncryption_642d1189"
+        },
+        {
+            "type": "java",
+            "name": "DocumentEncryptionTest",
+            "request": "launch",
+            "mainClass": "DocumentEncryptionTest",
+            "projectName": "AESDocumentEncryption_642d1189"
+        },
+        {
+            "name": "PowerShell Attach Interactive Session Runspace",
+            "type": "PowerShell",
+            "request": "attach",
+            "processId": "current"
+        }
+    ]
+}
