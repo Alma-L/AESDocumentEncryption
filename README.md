@@ -7,8 +7,9 @@
 - **Program**: First Semester, Master's
 
 ## Overview
+This project provides a Java-based application for encrypting and decrypting documents. The application leverages **CBC (Cipher Block Chaining)** mode to securely handle sensitive files, ensuring confidentiality and integrity. It demonstrates secure encryption and decryption techniques in line with modern information security standards.
 
-This project provides a Java-based application for encrypting and decrypting documents. It uses the **CBC (Cipher Block Chaining)** encryption mode to ensure secure handling of sensitive files. The application demonstrates secure encryption, decryption.
+**Note**: This project is developed for academic purposes as part of the Siguri e Informacionit course.
 
 ## Features
 
@@ -30,14 +31,14 @@ This project provides a Java-based application for encrypting and decrypting doc
 # Results Sample
 ## PDF Sample
  ![This is a picture of the PDF we will try to encrypt **BookForEncryption.pdf**](pdf_encrypted.png) <br>
- This a picture of the pdf we will try to encrypt **BookForEncryption.pdf**<br><br>
+ Here is the sample PDF we will encrypt: **BookForEncryption.pdf**<br><br>
  ![alt text](pdf_for_encryption.png)<br>
  This is a result from **BookForEncryption_encrpyted.pdf**, this is generated when we run file **PDFDocumentEncryption.java**
 ## Text file Sample
 ![This is a picture of the text file we create and proceed with encryption **TextForEncryption.pdf**](text_file_for_encryption.png) <br>
 This is a picture of the text file we create and proceed with encryption **TextForEncryption.txt**<br><br>
 ![alt text](text_file_encryption_output.png)<br>
-This is the output generated when we run the file **TextDocumentEncryption.java**
+The encrypted version is generated after running **TextDocumentEncryption.java**
 
 
 
