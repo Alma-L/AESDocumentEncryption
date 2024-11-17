@@ -20,25 +20,27 @@ This project provides a Java-based application for encrypting and decrypting doc
 
 ### Files Included:
 - **`DocumentEncryption.java`**: Core class for encryption and decryption functionality.
-- **`DocumentEncryptionCbc.java`**: Implements the CBC mode for encryption.
-- **`DocumentEncryptionTest.java`**: Unit tests for ensuring encryption/decryption reliability.
-- **`Main.java`**: Demonstrates how to encrypt and decrypt files.
+- **`PDFDocumentEncryption.java`**: Unit tests for ensuring encryption/decryption reliability.
+- **`TextDocumentEncryption.java`**: Demonstrates how to encrypt and decrypt files.
 - **`LICENSE`**: License for the project.
 - **`README.md`**: Documentation for the project.
 - **`BookForEncryption.pdf`**: Sample PDF file for testing encryption.
 - **`BookForEncryption_decrypted.pdf`**: Decrypted version of the sample PDF.
  
-## Results Sample
+# Results Sample
+## PDF Sample
+ ![This is a picture of the PDF we will try to encrypt **BookForEncryption.pdf**](pdf_encrypted.png) <br>
+ This a picture of the pdf we will try to encrypt **BookForEncryption.pdf**<br><br>
+ ![alt text](pdf_for_encryption.png)<br>
+ This is a result from **BookForEncryption_encrpyted.pdf**, this is generated when we run file **PDFDocumentEncryption.java**
+## Text file Sample
+![This is a picture of the text file we create and proceed with encryption **TextForEncryption.pdf**](text_file_for_encryption.png) <br>
+This is a picture of the text file we create and proceed with encryption **TextForEncryption.txt**<br><br>
+![alt text](text_file_encryption_output.png)<br>
+This is the output generated when we run the file **TextDocumentEncryption.java**
 
- ![This is a picture of the PDF we will try to encrypt **BookForEncryption.pdf**](image-1.png) <br>
- This a picture of the pdf we will try to encrpyt **BookForEncryption.pdf**<br><br>
- ![alt text](image.png)<br>
- This is a result from **BookForEncryption_encrpyted.pdf**, this is generated when we run file DocumentEncrptionTest.java
 
 
 
 
-
-
-
-[def]: image-1.png
+[def]: pdf_encrypted.png

@@ -4,49 +4,46 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Base64;
 
-public class Main {
+public class TextDocumentEncryption {
     public static void main(String[] args) {
-        File testFile = new File("testFileCbc.txt");
+        File textFile = new File("TextForEncryption.txt");
+        File encryptedFile = new File(textFile.getAbsolutePath() + ".encrypted");
+        File decryptedFile = new File(textFile.getAbsolutePath() + ".decrypted");
 
         // Krijo skedarin origjinal
-        try (FileWriter writer = new FileWriter(testFile)) {
+        try (FileWriter writer = new FileWriter(textFile)) {
             writer.write("SHIHEMI NE ROUTE 66 NE ORA 6");
             System.out.println("Skedari origjinal u krijua me sukses!");
         } catch (IOException e) {
             System.out.println("Gabim gjatë krijimit të skedarit: " + e.getMessage());
         }
-
-        // Printo përmbajtjen e skedarit origjinal
         System.out.println("\nPërmbajtja e skedarit origjinal:");
-        printFileContentAsText(testFile);
+        printFileContentAsText(textFile);
 
         // Enkriptimi
-        System.out.println("\nDuke enkriptuar...");
-        DocumentEncryptionCbc.encrypt(testFile);
+        System.out.println("\n\nDuke enkriptuar...");
+        DocumentEncryption.encryptToNewFile(textFile, encryptedFile);
+        renameToOldFilename(textFile, encryptedFile);
         System.out.println("Enkriptimi përfundoi!");
-
-        // Printo përmbajtjen e skedarit të enkriptuar
         System.out.println("\nPërmbajtja e skedarit të enkriptuar:");
-        printFileContentAsBytes(testFile);
+        printFileContentAsBytes(textFile);
 
         // Dekriptimi
-        System.out.println("\nDuke dekriptuar...");
-        DocumentEncryptionCbc.decrypt(testFile);
+        System.out.println("\n\nDuke dekriptuar...");
+        DocumentEncryption.decryptToNewFile(textFile, decryptedFile);
+        renameToOldFilename(textFile, decryptedFile);
         System.out.println("Dekriptimi përfundoi!");
-
-        // Printo përmbajtjen e skedarit të dekriptuar
         System.out.println("\nPërmbajtja e skedarit të dekriptuar:");
-        printFileContentAsText(testFile);
+        printFileContentAsText(textFile);
     }
 
-    // Metodë për të lexuar dhe printuar përmbajtjen e skedarit si tekst
     private static void printFileContentAsText(File file) {
         try (FileInputStream inputStream = new FileInputStream(file)) {
             int content;
             while ((content = inputStream.read()) != -1) {
                 System.out.print((char) content);
             }
-            System.out.println(); // Shto një vijë të re
+            System.out.println();
         } catch (IOException e) {
             System.out.println("Gabim gjatë leximit të skedarit: " + e.getMessage());
         }
@@ -61,5 +58,12 @@ public class Main {
         } catch (IOException e) {
             System.out.println("Gabim gjatë leximit të skedarit: " + e.getMessage());
         }
+    }
+
+    private static void renameToOldFilename(File oldFile, File newFile) {
+        if (oldFile.exists()) {
+            oldFile.delete();
+        }
+        newFile.renameTo(oldFile);
     }
 }

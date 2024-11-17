@@ -3,9 +3,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Arrays;
 
-public class DocumentEncryptionTest {
+public class PDFDocumentEncryption {
     public static void main(String[] args) {
-        File pdfFile = new File("C:\\Users\\Alma\\Desktop\\AESDocumentEncryption\\BookForEncryption.pdf");
+        File pdfFile = new File("BookForEncryption.pdf");
 
         if (!pdfFile.exists()) {
             System.out.println("PDF file does not exist. Please ensure 'BookForEncryption.pdf' is in the specified directory.");
@@ -14,8 +14,8 @@ public class DocumentEncryptionTest {
 
         System.out.println("Original PDF file size: " + pdfFile.length() + " bytes");
 
-        File encryptedFile = new File("C:\\Users\\Alma\\Desktop\\AESDocumentEncryption\\BookForEncryption_encrypted.pdf");
-        File decryptedFile = new File("C:\\Users\\Alma\\Desktop\\AESDocumentEncryption\\BookForEncryption_decrypted.pdf");
+        File encryptedFile = new File("BookForEncryption_encrypted.pdf");
+        File decryptedFile = new File("BookForEncryption_decrypted.pdf");
 
         // Encrypt the file
         System.out.println("\nEncrypting the PDF file...");

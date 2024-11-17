@@ -9,12 +9,11 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 public class DocumentEncryption {
-    private static final String ALGORITHM = "AES";
     private static final String TRANSFORMATION = "AES/CBC/PKCS5Padding";
-    private static final int KEY_SIZE = 256;
 
-    private static final SecretKeySpec key = generateKey();
-    private static final IvParameterSpec iv = generateIv();
+
+    private static final SecretKeySpec key = Generator.generateKey();
+    private static final IvParameterSpec iv = Generator.generateIv();
 
     public static void encryptToNewFile(File inputFile, File outputFile) {
         try (FileInputStream inputStream = new FileInputStream(inputFile);
@@ -62,23 +61,5 @@ public class DocumentEncryption {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    private static SecretKeySpec generateKey() {
-        try {
-            KeyGenerator keyGen = KeyGenerator.getInstance(ALGORITHM);
-            keyGen.init(KEY_SIZE);
-            SecretKey secretKey = keyGen.generateKey();
-            return new SecretKeySpec(secretKey.getEncoded(), ALGORITHM);
-        } catch (Exception e) {
-            throw new RuntimeException("Error generating key", e);
-        }
-    }
-
-    private static IvParameterSpec generateIv() {
-        byte[] ivBytes = new byte[16];
-        SecureRandom secureRandom = new SecureRandom();
-        secureRandom.nextBytes(ivBytes);
-        return new IvParameterSpec(ivBytes);
     }
 }
